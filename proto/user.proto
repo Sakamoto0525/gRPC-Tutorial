@@ -1,0 +1,28 @@
+syntax = "proto3";
+package api.user;
+
+option go_package = "gen/api";
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+    rpc Index(UserRequest) returns (UserResponse) {}
+    rpc Show(UserRequest) returns (UserResponse) {}
+}
+
+message User {
+    int64  id      = 1; // ID
+    string name    = 2; // 名前
+    int32  age     = 3; // 年齢
+    int32  tel     = 4; // 電話番号
+    string address = 5; // メールアドレス
+    google.protobuf.Timestamp create_time = 15; // 作成日時
+}
+
+message UserRequest {
+    User id = 1;
+}
+
+message UserResponse {
+    User user = 1;
+}

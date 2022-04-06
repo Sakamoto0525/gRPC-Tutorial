@@ -25,6 +25,10 @@ func main() {
 		server,                    // gRPCサーバー
 		handler.NewBakerHandler(), // リクエストを処理するハンドラ
 	)
+	api.RegisterUserServiceServer(
+		server,
+		handler.NewUserHandler(),
+	)
 	reflection.Register(server)
 
 	go func() {
