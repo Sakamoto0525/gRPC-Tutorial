@@ -1,4 +1,4 @@
 # gRPC-Tutorial
 
-Go × RubyでgRPCを触ってみる
+gRPCを触ってみる
 
